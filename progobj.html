@@ -1,14 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Programmation Objet - Mon Site</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .poo-wrapper {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 60px 0;
+            min-height: calc(100vh - 70px);
+        }
+        .poo-card {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            padding: 60px;
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+        .hero-title {
+            color: #4facfe;
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .hero-subtitle {
+            color: #00f2fe;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+        .definition-box {
+            background: linear-gradient(135deg, #e0f7ff 0%, #d4f1f9 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 6px solid #4facfe;
+        }
+        .concept-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border: 2px solid #dee2e6;
+            transition: all 0.3s;
+        }
+        .concept-card:hover {
+            border-color: #4facfe;
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.2);
+        }
+        .code-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .important-note {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #ffc107;
+        }
+        .key-point {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 12px 0;
+            border-left: 4px solid #28a745;
+        }
+        .section-title {
+            color: #4facfe;
+            font-weight: 800;
+            font-size: 2.2rem;
+            margin: 40px 0 25px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #4facfe;
+        }
+        .subsection-title {
+            color: #00f2fe;
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin: 30px 0 20px 0;
+        }
+        .type-list {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        .access-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Mon Site</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -17,28 +116,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Accueil</a>
+                        <a class="nav-link" href="index.html">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="progobj.html">prog objet</a>
+                        <a class="nav-link active" href="progobj.html">Prog Objet</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gestiongit.html">Gestion Git</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="anglais.html">Anglais</a>
+                        <a class="nav-link" href="anglais.html">Anglais</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="cacaliter.html">Qualité dev</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="progobj.html">pas def</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="progobj.html">pas def</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="progobj.html">pas def</a>
+                        <a class="nav-link" href="cacaliter.html">Qualité dev</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
@@ -59,54 +149,213 @@
         </div>
     </nav>
 
+    <div class="poo-wrapper">
+        <div class="container">
+            <div class="poo-card">
+                <h1 class="hero-title">☕ Programmation Orientée Objet</h1>
+                <p class="hero-subtitle">Pas sûr que je note grand chose, j'entends rien</p>
 
-    <h1><a href="moodle.univ-fcomte.fr/pluginfile.php/1518238/mod_resource/content/20/POO-Cours1.pdf">le cours est la</a></h1>
-    <h1>pas sur que je note grand chose j'entend r</h1>
-    <br> programme procedural == se concentre sur les tache
-    <br> jav applet permet de l'utiliser en html gere les protocole de communication <br>
-    java est multitache donc prog en parallele multi threading  parallisme<br>
-    une class decrit un esemble de carcatheristique et c'est un modele d'objet <br>
-    comportement = metode <br>
-    carcatheristique = donnee <br>
-    dans int =x  ==>  int = classe x=objet <br>
-    instance = objet une instance possede une memoire propre elle est crer a l'excution par une class <br>
-    methode appeler  juste appeler public nom = constructeur elle a le même nom que la classe <br>
-    quand on appelle le constructeur on met un new devant ==> p1 = new nomconstructeur
-    <br>chaque instance on leurs variable (celle en qu'on lui donne) <br>
-    new reserve l'espace memoire point plan(4.5) initialise  l'objet crer le new retourne l'adresse de l'instance creer qui est affecter a la variable referace P <br>
-    pointplan p = new pointPlan(4,5);
-    <br>p.translater(10,20);<br>
-    si on réatribue notre lettre a une valeur meme null alors on perd les donnée elle est plus referancer je sais même pas pourquoi j'ecrit ça c'est tellement logique <br>
-    si on a des objet orphelin java vas les tuer pour recuperer de la mémoire engros c'est lutter contre la surpopulation en eradiquand ceux qui ne servent plus a rien <br>
-    variable d'instance = def v,f,f,g <br>
-    constructeur = appelle a une fonction <br>
-    methode = fonction <br>
-    signature = nom + entrer des valeur ==> c'est a dire 2 fonction qui ont le même nom peuvent coexister sauf si ils ont les même type de valeur par exemple si un on rentre 1 int et l'autre un double <br>
-    <br>Représentation en UML
-    <br>une classe est représentée par une boite à trois compartiments :
-    <br>le nom de la classe,
-    <br>les attributs de la classe (sous la forme nom : type),
-    <br>les méthodes de la classe (sous la forme nom(type nom, ...) ): type de retour <br>
-    <br>Variables d’instancesVariables d’instances
-    <br>types primitifs :
-    <br>byte (entier 8 bits)
-    <br>short (entier 16 bits)
-    <br>int (entier 32 bits)
-    <br>long (entier 64 bits)
-    <br>float (réel 32 bits)
-    <br>double (réel 64 bits)
-    <br>char (caractère, ‘A’, ‘2’, ...)
-    <br>boolean (true, false) <br>
-    si on as un constructeur vide on parle de constructeur par default (vide = nomconstructeur(){etc...}) <br>
-    THIS <br> pour les variable d'instance <br> public visible de l'exterieur et private uniquement de l'interieur <br>
-    <br>private (-) : même classe
-    <br>protected(#) : même classe, classe filles, même paquetage
-    <br>public(+) : même classe, classe filles, même paquetage, autre cas
-    <br>aucun (« friendly ») ( ) : même classe, même paquetage
+                <div class="alert alert-primary" style="border-left: 5px solid #4facfe;">
+                    <strong>📚 Le cours complet :</strong> 
+                    <a href="moodle.univ-fcomte.fr/pluginfile.php/1518238/mod_resource/content/20/POO-Cours1.pdf" target="_blank">
+                        Disponible ici sur Moodle
+                    </a>
+                </div>
 
+                <div class="definition-box">
+                    <h3 style="color: #4facfe; font-weight: 700; margin-bottom: 15px;">🎯 Différence fondamentale</h3>
+                    <p><strong>Programme procédural</strong> : Se concentre sur les tâches</p>
+                    <p><strong>Programme orienté objet</strong> : Se concentre sur les objets et leurs interactions</p>
+                </div>
 
+                <div class="section-title">☕ Java - Caractéristiques</div>
+                
+                <div class="concept-card">
+                    <strong>Java Applet :</strong> Permet de l'utiliser en HTML, gère les protocoles de communication
+                </div>
 
+                <div class="concept-card">
+                    <strong>Multitâche :</strong> Java est multitâche donc prog en parallèle (multi-threading, parallélisme)
+                </div>
 
+                <div class="section-title">📦 Classes et Objets</div>
 
+                <div class="definition-box">
+                    <p style="font-size: 1.1rem; margin-bottom: 15px;">
+                        <strong>Une classe</strong> décrit un ensemble de caractéristiques et c'est un modèle d'objet
+                    </p>
+                    <div class="key-point">
+                        <strong>Comportement</strong> = Méthode
+                    </div>
+                    <div class="key-point">
+                        <strong>Caractéristique</strong> = Donnée
+                    </div>
+                </div>
+
+                <div class="important-note">
+                    <p style="margin-bottom: 10px;">Dans <code>int x;</code></p>
+                    <p style="margin-bottom: 0;"><code>int</code> = classe | <code>x</code> = objet</p>
+                </div>
+
+                <div class="definition-box">
+                    <h4 style="color: #00f2fe; font-weight: 700;">🔷 Instance</h4>
+                    <p>Instance = Objet. Une instance possède une mémoire propre, elle est créée à l'exécution par une classe</p>
+                </div>
+
+                <div class="section-title">🏗️ Constructeur</div>
+
+                <div class="concept-card">
+                    <p><strong>Méthode appelée :</strong> Juste appelée <code>public nom</code> = constructeur</p>
+                    <p>Elle a le même nom que la classe</p>
+                    <p>Quand on appelle le constructeur, on met un <code>new</code> devant</p>
+                </div>
+
+                <div class="code-example">
+p1 = new nomConstructeur();
+                </div>
+
+                <div class="important-note">
+                    <p>Chaque instance a ses propres variables (celles qu'on lui donne)</p>
+                </div>
+
+                <div class="section-title">💾 Gestion mémoire</div>
+
+                <div class="definition-box">
+                    <p style="margin-bottom: 10px;">Le <code>new</code> effectue 3 opérations :</p>
+                    <ol style="margin-left: 20px;">
+                        <li>Réserve l'espace mémoire</li>
+                        <li>Initialise l'objet créé</li>
+                        <li>Retourne l'adresse de l'instance créée qui est affectée à la variable référence</li>
+                    </ol>
+                </div>
+
+                <div class="code-example">
+PointPlan p = new PointPlan(4, 5);
+p.translater(10, 20);
+                </div>
+
+                <div class="important-note">
+                    <p>Si on réattribue notre lettre à une valeur (même <code>null</code>), alors on perd les données, elle n'est plus référencée.</p>
+                    <p style="margin-top: 10px;"><strong>⚠️</strong> Je sais même pas pourquoi j'écris ça c'est tellement logique</p>
+                </div>
+
+                <div class="concept-card">
+                    <h4 style="color: #00f2fe;">🗑️ Garbage Collector</h4>
+                    <p>Si on a des objets orphelins, Java va les tuer pour récupérer de la mémoire.</p>
+                    <p style="font-style: italic;">En gros c'est lutter contre la surpopulation en éradiquant ceux qui ne servent plus à rien</p>
+                </div>
+
+                <div class="section-title">📖 Terminologie</div>
+
+                <div class="key-point">
+                    <strong>Variable d'instance :</strong> Définition de variables, fonctions, etc.
+                </div>
+
+                <div class="key-point">
+                    <strong>Constructeur :</strong> Appel à une fonction
+                </div>
+
+                <div class="key-point">
+                    <strong>Méthode :</strong> Fonction
+                </div>
+
+                <div class="definition-box">
+                    <h4 style="color: #4facfe; font-weight: 700;">✍️ Signature</h4>
+                    <p>Signature = Nom + entrée des valeurs</p>
+                    <p style="margin-top: 10px;">C'est-à-dire 2 fonctions qui ont le même nom peuvent coexister SAUF si elles ont les mêmes types de valeur</p>
+                    <p style="margin-top: 5px;"><strong>Exemple :</strong> Une fonction avec 1 <code>int</code> peut coexister avec une fonction avec 1 <code>double</code></p>
+                </div>
+
+                <div class="section-title">📐 Représentation en UML</div>
+
+                <div class="definition-box">
+                    <p style="margin-bottom: 15px;">Une classe est représentée par une boite à trois compartiments :</p>
+                    <ol style="margin-left: 20px;">
+                        <li>Le nom de la classe</li>
+                        <li>Les attributs de la classe (sous la forme <code>nom : type</code>)</li>
+                        <li>Les méthodes de la classe (sous la forme <code>nom(type nom, ...) : type de retour</code>)</li>
+                    </ol>
+                </div>
+
+                <div class="section-title">🔢 Types primitifs</div>
+
+                <div class="type-list">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li><code>byte</code> - entier 8 bits</li>
+                                <li><code>short</code> - entier 16 bits</li>
+                                <li><code>int</code> - entier 32 bits</li>
+                                <li><code>long</code> - entier 64 bits</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li><code>float</code> - réel 32 bits</li>
+                                <li><code>double</code> - réel 64 bits</li>
+                                <li><code>char</code> - caractère ('A', '2', ...)</li>
+                                <li><code>boolean</code> - true, false</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="important-note">
+                    <p>Si on a un constructeur vide, on parle de <strong>constructeur par défaut</strong></p>
+                    <div class="code-example">
+nomConstructeur() { ... }
+                    </div>
+                </div>
+
+                <div class="section-title">🔒 THIS et visibilité</div>
+
+                <div class="concept-card">
+                    <h4 style="color: #00f2fe;">🔹 THIS</h4>
+                    <p>Pour les variables d'instance</p>
+                </div>
+
+                <div class="definition-box">
+                    <p><code>public</code> : Visible de l'extérieur</p>
+                    <p><code>private</code> : Uniquement de l'intérieur</p>
+                </div>
+
+                <div class="access-table">
+                    <table class="table table-striped mb-0">
+                        <thead style="background: #4facfe; color: white;">
+                            <tr>
+                                <th>Modificateur</th>
+                                <th>Symbole UML</th>
+                                <th>Portée</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>private</code></td>
+                                <td><strong>-</strong></td>
+                                <td>Même classe</td>
+                            </tr>
+                            <tr>
+                                <td><code>protected</code></td>
+                                <td><strong>#</strong></td>
+                                <td>Même classe, classes filles, même paquetage</td>
+                            </tr>
+                            <tr>
+                                <td><code>public</code></td>
+                                <td><strong>+</strong></td>
+                                <td>Même classe, classes filles, même paquetage, autre cas</td>
+                            </tr>
+                            <tr>
+                                <td>aucun ("friendly")</td>
+                                <td><strong>(espace)</strong></td>
+                                <td>Même classe, même paquetage</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
