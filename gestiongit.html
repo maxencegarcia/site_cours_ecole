@@ -1,11 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Mon Site</title>
+    <title>Gestion Git - Mon Site</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .git-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 0;
+            min-height: calc(100vh - 70px);
+        }
+        .git-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            padding: 50px;
+            margin: 30px auto;
+            max-width: 1100px;
+        }
+        .page-title {
+            color: #667eea;
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .info-card {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 6px solid #667eea;
+            transition: all 0.3s;
+        }
+        .info-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        .concept-item {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #764ba2;
+        }
+        .resource-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .link-card {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+        }
+        .link-card:hover {
+            background: #764ba2;
+            color: white;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            margin: 40px 0;
+            border-radius: 2px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -17,7 +87,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link " href="index.html">Accueil</a>
+                        <a class="nav-link" href="index.html">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="gestiongit.html">Gestion Git</a>
@@ -40,33 +110,111 @@
             </div>
         </div>
     </nav>
-    brance stable branche dev (pour le dev) et une branche expe (pour les experience) <br>
-    soit local (sur son propre pc) centraliser ( sur un serv perso) decentraliser ( sur un serv externe)<br>
-    systeme de verrou = interdiction de travailler sur un bout de code permet de proteger<br>
-    <gitlab class="iut-bm univ-fcomte fr"></gitlab><br>
-    a l'iut <br>
-    gitlab.iut-bm.univ-fcomte.fr <br>
-    software gitolite gitlab en soft pas web <br>
-    ressource locales : qualiter dev en s2 r2.03 <br>
-    verif si git est installer sinon l'installer <br>
-    site de ref :  git-scm <br>
-    les hook : cf githook <br>
-    qui permet de declencher des operatipns automatiquements en script shell verif comit envoi de mail notif vers d'autre dev etc.. <br>
-    interface avec d'autre systemes : git svn git cvsimport <br>
-    installer son propre serv : <br>
-    sur gitLbab https://about.gitlab.com/product <br> <a href="https://about.gitlab.com/product"> lien si besoin</a>
-    gitweb pour le voir depuis du web <br>
-    revu de code : gerrit  pour valider avant de valider ou ajouter des commentaire<br>
-    
 
+    <div class="git-bg">
+        <div class="container">
+            <div class="git-container">
+                <h1 class="page-title">🔀 Gestion Git</h1>
 
+                <div class="info-card">
+                    <h3 style="color: #667eea; font-weight: 700; margin-bottom: 15px;">📊 Organisation des branches</h3>
+                    <div class="concept-item">
+                        <strong>Branche stable</strong> - Version de production
+                    </div>
+                    <div class="concept-item">
+                        <strong>Branche dev</strong> - Pour le développement
+                    </div>
+                    <div class="concept-item">
+                        <strong>Branche expe</strong> - Pour les expériences
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div class="info-card">
+                    <h3 style="color: #764ba2; font-weight: 700; margin-bottom: 15px;">🖥️ Types d'environnement</h3>
+                    <div class="concept-item">
+                        <strong>Local</strong> - Sur son propre PC
+                    </div>
+                    <div class="concept-item">
+                        <strong>Centralisé</strong> - Sur un serveur perso
+                    </div>
+                    <div class="concept-item">
+                        <strong>Décentralisé</strong> - Sur un serveur externe
+                    </div>
+                </div>
+
+                <div class="alert alert-info mt-4">
+                    <strong>🔒 Système de verrou :</strong> Interdiction de travailler sur un bout de code, permet de protéger
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div class="resource-box">
+                    <h3 style="color: #d84315; font-weight: 700; margin-bottom: 15px;">🎓 À l'IUT</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 10px;">
+                        <strong>GitLab IUT :</strong> <code style="background: white; padding: 5px 10px; border-radius: 5px;">gitlab.iut-bm.univ-fcomte.fr</code>
+                    </p>
+                    <p style="font-size: 1.1rem; margin-bottom: 10px;">
+                        <strong>Software :</strong> Gitolite, GitLab (en soft, pas web)
+                    </p>
+                    <p style="font-size: 1.1rem; margin-bottom: 0;">
+                        <strong>Ressource locale :</strong> Qualité dev en S2 R2.03
+                    </p>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div class="info-card">
+                    <h3 style="color: #667eea; font-weight: 700; margin-bottom: 15px;">🛠️ Vérifications et outils</h3>
+                    <p>Vérifier si Git est installé, sinon l'installer</p>
+                    <p><strong>Site de référence :</strong> git-scm</p>
+                </div>
+
+                <div class="info-card">
+                    <h3 style="color: #764ba2; font-weight: 700; margin-bottom: 15px;">🪝 Les Hooks</h3>
+                    <p style="margin-bottom: 10px;"><strong>Cf :</strong> githook</p>
+                    <p>Permettent de déclencher des opérations automatiquement en script shell :</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Vérification des commits</li>
+                        <li>Envoi de mails</li>
+                        <li>Notifications vers d'autres devs</li>
+                        <li>etc...</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3 style="color: #667eea; font-weight: 700; margin-bottom: 15px;">🔗 Interface avec d'autres systèmes</h3>
+                    <div class="concept-item">
+                        <code>git svn</code>
+                    </div>
+                    <div class="concept-item">
+                        <code>git cvsimport</code>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div class="resource-box">
+                    <h3 style="color: #d84315; font-weight: 700; margin-bottom: 20px;">🚀 Installer son propre serveur</h3>
+                    
+                    <a href="https://about.gitlab.com/product" class="link-card" target="_blank">
+                        <h5 style="margin-bottom: 5px;">GitLab</h5>
+                        <p style="margin: 0; opacity: 0.9;">https://about.gitlab.com/product</p>
+                    </a>
+
+                    <div class="concept-item mt-3">
+                        <strong>GitWeb :</strong> Pour le voir depuis le web
+                    </div>
+
+                    <div class="concept-item">
+                        <strong>Gerrit :</strong> Revue de code - pour valider avant de valider ou ajouter des commentaires
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
-        <script>
-        fetch('partials/nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error('Erreur de chargement du menu:', err));
-    </script>
 </html>
